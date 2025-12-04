@@ -1,36 +1,49 @@
 /**
  * KapaBackground Component
  * 
- * A wrapper that applies a subtle kapa-inspired pattern.
- * Kapa is traditional Hawaiian bark cloth with geometric patterns.
+ * Applies a subtle kapa-inspired geometric pattern.
+ * Kapa is traditional Hawaiian bark cloth featuring
+ * geometric patterns like triangles, lines, and diamonds.
  * 
- * The pattern is very low-opacity (0.03) to maintain readability.
+ * The pattern uses extremely low contrast (forestSoft on forest)
+ * to avoid interfering with text readability.
  * 
  * Props:
- * - children: Content to render inside
- * - className: Additional CSS classes
- * - intensity: Pattern opacity ('subtle' | 'medium') - default 'subtle'
+ * - children: Content to render
+ * - className: Additional classes
+ * - pattern: 'triangles' | 'diamonds' | 'lines' (default: 'triangles')
  */
 
 interface KapaBackgroundProps {
   children: React.ReactNode;
   className?: string;
-  intensity?: 'subtle' | 'medium';
+  pattern?: 'triangles' | 'diamonds' | 'lines';
 }
+
+// Pattern SVGs encoded for CSS backgrounds
+// Uses forestSoft (#0b3b32) on forest (#062b24) for minimal contrast
+const patterns = {
+  // Traditional triangle/mountain pattern
+  triangles: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 35 L5 35 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E")`,
+  
+  // Diamond/rhombus pattern
+  diamonds: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4 L28 16 L16 28 L4 16 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E")`,
+  
+  // Horizontal line pattern
+  lines: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='10' x2='20' y2='10' stroke='%230b3b32' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E")`,
+};
 
 export function KapaBackground({ 
   children, 
   className = "",
-  intensity = 'subtle' 
+  pattern = 'triangles'
 }: KapaBackgroundProps) {
   return (
     <div className={`relative ${className}`}>
-      {/* Kapa pattern overlay */}
+      {/* Pattern overlay */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4f4f1' fill-opacity='${intensity === 'subtle' ? '0.03' : '0.05'}'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
+        style={{ backgroundImage: patterns[pattern] }}
         aria-hidden="true"
       />
       {/* Content */}
@@ -41,3 +54,15 @@ export function KapaBackground({
   );
 }
 
+/**
+ * Alternative: CSS class approach
+ * Add this to globals.css if you prefer utility classes:
+ * 
+ * .bg-kapa-triangles {
+ *   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 35 L5 35 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
+ * }
+ * 
+ * .bg-kapa-diamonds {
+ *   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4 L28 16 L16 28 L4 16 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E");
+ * }
+ */

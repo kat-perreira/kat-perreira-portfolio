@@ -6,11 +6,12 @@
  * - Brief intro
  * - Navigation links
  * - Social links
+ * - Decorative ʻIwa birds
  * 
  * On mobile: Converts to a top section (not sticky)
  */
 
-import { IwaBirds } from './IwaBirds';
+import { IwaBirdsHero } from './IwaBirds';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -53,13 +54,14 @@ const socialLinks = [
 
 export function Sidebar() {
   return (
-    <aside className="lg:sticky lg:top-0 lg:h-screen lg:w-[420px] lg:flex-shrink-0">
+    <aside className="lg:sticky lg:top-0 lg:h-screen lg:w-[480px] lg:flex-shrink-0 overflow-hidden">
       <div className="relative h-full px-6 py-12 lg:py-24 lg:px-12 flex flex-col">
-        {/* ʻIwa Birds - decorative */}
-        <IwaBirds className="hidden lg:block absolute top-24 -right-12 w-72 h-72" />
+        
+        {/* ʻIwa Birds - positioned in upper right of sidebar */}
+        <IwaBirdsHero className="hidden lg:block absolute top-12 right-0 w-72 h-64" />
         
         {/* Main content */}
-        <div className="flex-1">
+        <div className="flex-1 relative z-10">
           {/* Name */}
           <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] text-sand leading-tight mb-4">
             Kat Perreira
@@ -70,13 +72,7 @@ export function Sidebar() {
             Senior Software Engineer<br />
             & Technical Storyteller
           </h2>
-          
-          {/* Intro paragraph */}
-          <p className="text-sand/70 leading-relaxed mb-12 max-w-sm">
-            I build accessible, high-performance web experiences, mentor engineers,
-            and speak about engineering culture, search, and humane software.
-          </p>
-          
+            
           {/* Navigation - desktop only */}
           <nav className="hidden lg:block mb-12" aria-label="Main navigation">
             <ul className="space-y-4">
@@ -94,8 +90,8 @@ export function Sidebar() {
           </nav>
         </div>
         
-        {/* Social links */}
-        <div className="flex gap-5">
+        {/* Social links - pinned to bottom */}
+        <div className="flex gap-5 relative z-10">
           {socialLinks.map((link) => (
             <a
               key={link.href}
@@ -136,4 +132,3 @@ export function MobileNav() {
     </nav>
   );
 }
-

@@ -48,19 +48,24 @@ body {
 }
 
 /* ========================================
-   Kapa Background Pattern
+   Kapa Background Patterns
+   Uses forestSoft (#0b3b32) on forest (#062b24)
+   for very low contrast, subtle texture
    ======================================== */
-.kapa-bg {
-  position: relative;
+
+/* Triangles - traditional mountain/peak pattern */
+.bg-kapa-triangles {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 35 L5 35 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
 }
 
-.kapa-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4f4f1' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
+/* Diamonds - rhombus pattern */
+.bg-kapa-diamonds {
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4 L28 16 L16 28 L4 16 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* Lines - horizontal stripes */
+.bg-kapa-lines {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='10' x2='20' y2='10' stroke='%230b3b32' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
 }
 
 /* ========================================

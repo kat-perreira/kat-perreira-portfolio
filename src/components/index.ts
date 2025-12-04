@@ -5,7 +5,7 @@
  */
 
 export { Sidebar, MobileNav } from './Sidebar';
-export { IwaBirds, IwaBird } from './IwaBirds';
+export { IwaBirds, IwaBird, IwaBirdsHero } from './IwaBirds';
 export { KapaBackground } from './KapaBackground';
 export { Section, SectionDivider } from './Section';
-
+export { Hero } from './Hero';
