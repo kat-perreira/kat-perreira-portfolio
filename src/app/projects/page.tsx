@@ -11,11 +11,11 @@ export default function ProjectsPage() {
       <div className="px-6 lg:px-12 py-12 lg:py-24">
         <Section title="Projects">
           <p className="text-sand/70 max-w-2xl mb-12 leading-relaxed">
-            A collection of projects I&apos;ve built or contributed to. 
+            TODO: Add content A collection of projects I&apos;ve built or contributed to. 
             Each one taught me something new about building great software.
           </p>
           
-          <div className="space-y-12">
+          {/* <div className="space-y-12">
             <FeaturedProject
               title="Featured Project One"
               description="A comprehensive description of this project. What problem did it solve? What was your role? What technologies did you use? What was the impact?"
@@ -43,17 +43,17 @@ export default function ProjectsPage() {
                 github: "https://github.com/username/project",
               }}
             />
-          </div>
+          </div> */}
         </Section>
 
         <Section title="Other Projects" className="mt-16">
           <div className="grid md:grid-cols-2 gap-6">
             <SmallProject
-              title="Small Project One"
+              title="TODO: fill in other projects"
               description="A brief description of this smaller project."
               tags={["React", "CSS"]}
             />
-            <SmallProject
+            {/* <SmallProject
               title="Small Project Two"
               description="A brief description of this smaller project."
               tags={["Node.js", "Express"]}
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
               title="Small Project Four"
               description="A brief description of this smaller project."
               tags={["TypeScript", "CLI"]}
-            />
+            /> */}
           </div>
         </Section>
       </div>
