@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.scss";
+import styles from "./layout.module.scss";
 import { Sidebar, MobileNav } from "@/components";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -33,18 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${cormorantGaramond.variable} ${sourceSans.variable} antialiased bg-forest text-sand`}>
-        {/* Mobile Navigation */}
+    <html lang="en">
+      <body className={`${cormorantGaramond.variable} ${sourceSans.variable} ${styles.body}`}>
         <MobileNav />
-        
-        {/* Main Layout: Sticky Sidebar + Scrolling Content */}
-        <div className="lg:flex lg:min-h-screen">
-          {/* Left Sidebar - sticky on desktop */}
+        <div className={styles.wrapper}>
           <Sidebar />
-          
-          {/* Right Content Area - scrolls naturally */}
-          <main className="flex-1 min-w-0">
+          <main className={styles.main}>
             {children}
           </main>
         </div>
@@ -52,4 +47,3 @@ export default function RootLayout({
     </html>
   );
 }
-

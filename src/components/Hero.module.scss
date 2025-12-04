@@ -1,0 +1,81 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.hero {
+  padding: $spacing-16 0;
+  
+  @include md {
+    padding: $spacing-24 0;
+  }
+  
+  @include lg {
+    padding: $spacing-32 0;
+  }
+}
+
+.label {
+  color: $gold;
+  font-size: $text-sm;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: $spacing-4;
+}
+
+.heading {
+  @include heading-1;
+  color: $sand;
+  margin-bottom: $spacing-6;
+  
+  br {
+    display: block;
+  }
+}
+
+.highlight {
+  color: $gold;
+}
+
+.intro {
+  color: $sand-70;
+  font-size: $text-base;
+  line-height: $leading-relaxed;
+  max-width: 36rem;
+  margin-bottom: $spacing-10;
+  
+  @include md {
+    font-size: $text-lg;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4;
+}
+
+.buttonPrimary {
+  @include button-outline;
+}
+
+.buttonSecondary {
+  @include button-outline;
+  border-color: $sand-30;
+  color: $sand-80;
+  
+  &:hover {
+    border-color: $sand;
+    color: $sand;
+    background: transparent;
+  }
+}
+
+.decorativeBorder {
+  margin-top: $spacing-16;
+  height: 1px;
+  background: linear-gradient(to right, $sand-20, $gold-30, transparent);
+  
+  @include md {
+    margin-top: $spacing-24;
+  }
+}
+

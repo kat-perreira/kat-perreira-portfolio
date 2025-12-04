@@ -1,0 +1,159 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ============================================
+// CSS Reset
+// ============================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $text-base;
+  line-height: $leading-normal;
+  color: $sand;
+  background-color: $forest;
+}
+
+// ============================================
+// Typography Defaults
+// ============================================
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: 400;
+  color: $sand;
+}
+
+p {
+  margin-bottom: $spacing-4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+// ============================================
+// Selection
+// ============================================
+::selection {
+  background: $gold;
+  color: $forest;
+}
+
+// ============================================
+// Scrollbar
+// ============================================
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $forest;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $forest-soft;
+  border-radius: $radius-sm;
+  
+  &:hover {
+    background: $gold;
+  }
+}
+
+// ============================================
+// Focus Styles
+// ============================================
+:focus-visible {
+  outline: 2px solid $gold;
+  outline-offset: 2px;
+}
+
+// ============================================
+// Images
+// ============================================
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// ============================================
+// Lists
+// ============================================
+ul, ol {
+  list-style: none;
+}
+
+// ============================================
+// Buttons
+// ============================================
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+// ============================================
+// Kapa Background Pattern
+// ============================================
+.kapa-triangles {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 35 L5 35 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+.kapa-diamonds {
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 4 L28 16 L16 28 L4 16 Z' fill='none' stroke='%230b3b32' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+.kapa-lines {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='10' x2='20' y2='10' stroke='%230b3b32' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+// ============================================
+// Animations
+// ============================================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+

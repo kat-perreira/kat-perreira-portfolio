@@ -1,0 +1,51 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+@use '../styles/pages' as *;
+
+.container {
+  @extend .pageContainer;
+}
+
+.card {
+  @extend .card;
+}
+
+.cardMeta {
+  @extend .cardMeta;
+}
+
+.cardTitle {
+  @extend .cardTitle;
+  font-size: $text-xl;
+}
+
+.cardDescription {
+  @extend .cardDescription;
+}
+
+.cardTags {
+  @extend .cardTags;
+}
+
+.tag {
+  @extend .tag;
+}
+
+.goldLabel {
+  color: $gold;
+  font-size: $text-sm;
+  margin-bottom: $spacing-1;
+}
+
+.grid {
+  @extend .grid2;
+}
+
+.link {
+  @extend .goldLink;
+}
+
+.sectionLink {
+  margin-top: $spacing-8;
+}
+

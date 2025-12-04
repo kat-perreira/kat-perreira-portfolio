@@ -1,4 +1,5 @@
 import { Section, SectionDivider, KapaBackground } from "@/components";
+import styles from "./page.module.scss";
 
 export const metadata = {
   title: "About | Kat Perreira",
@@ -7,12 +8,11 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <KapaBackground className="min-h-screen">
-      <div className="px-6 lg:px-12 py-12 lg:py-24">
+    <KapaBackground>
+      <div className={styles.container}>
         <Section title="About Me">
-          <div className="max-w-2xl space-y-6 text-sand/80 leading-relaxed">
+          <div className={styles.intro}>
             <p>
-              {/* TODO: Replace with your actual bio */}
               Hello! I&apos;m Kat, a senior software engineer based in [Location]. 
               I specialize in building accessible, high-performance web applications 
               that make a real difference in people&apos;s lives.
@@ -30,100 +30,76 @@ export default function AboutPage() {
           </div>
         </Section>
 
-        <SectionDivider className="my-8" />
+        <SectionDivider />
 
         <Section title="Experience">
-          <div className="space-y-8">
-            <ExperienceItem
-              company="Company Name"
-              role="Senior Software Engineer"
-              period="2022 - Present"
-              description="Led development of key features, mentored junior engineers, and improved system performance."
-            />
-            <ExperienceItem
-              company="Previous Company"
-              role="Software Engineer"
-              period="2019 - 2022"
-              description="Built and maintained customer-facing applications serving millions of users."
-            />
-            <ExperienceItem
-              company="First Company"
-              role="Junior Developer"
-              period="2017 - 2019"
-              description="Started my career building web applications and learning from senior engineers."
-            />
+          <div className={styles.experienceList}>
+            <div className={styles.experienceItem}>
+              <p className={styles.period}>2022 - Present</p>
+              <h3 className={styles.role}>Senior Software Engineer</h3>
+              <p className={styles.company}>Company Name</p>
+              <p className={styles.description}>
+                Led development of key features, mentored junior engineers, and improved system performance.
+              </p>
+            </div>
+            <div className={styles.experienceItem}>
+              <p className={styles.period}>2019 - 2022</p>
+              <h3 className={styles.role}>Software Engineer</h3>
+              <p className={styles.company}>Previous Company</p>
+              <p className={styles.description}>
+                Built and maintained customer-facing applications serving millions of users.
+              </p>
+            </div>
+            <div className={styles.experienceItem}>
+              <p className={styles.period}>2017 - 2019</p>
+              <h3 className={styles.role}>Junior Developer</h3>
+              <p className={styles.company}>First Company</p>
+              <p className={styles.description}>
+                Started my career building web applications and learning from senior engineers.
+              </p>
+            </div>
           </div>
         </Section>
 
-        <SectionDivider className="my-8" />
+        <SectionDivider />
 
         <Section title="Skills">
-          <div className="grid md:grid-cols-2 gap-8">
-            <SkillCategory
-              title="Languages & Frameworks"
-              skills={["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Python"]}
-            />
-            <SkillCategory
-              title="Backend & Data"
-              skills={["PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST APIs"]}
-            />
-            <SkillCategory
-              title="Infrastructure"
-              skills={["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"]}
-            />
-            <SkillCategory
-              title="Practices"
-              skills={["Accessibility (a11y)", "Performance", "Testing", "Agile", "Mentorship"]}
-            />
+          <div className={styles.skillsGrid}>
+            <div className={styles.skillCategory}>
+              <h3>Languages & Frameworks</h3>
+              <ul className={styles.skillList}>
+                {["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Python"].map((skill) => (
+                  <li key={skill} className={styles.skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.skillCategory}>
+              <h3>Backend & Data</h3>
+              <ul className={styles.skillList}>
+                {["PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST APIs"].map((skill) => (
+                  <li key={skill} className={styles.skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.skillCategory}>
+              <h3>Infrastructure</h3>
+              <ul className={styles.skillList}>
+                {["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"].map((skill) => (
+                  <li key={skill} className={styles.skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.skillCategory}>
+              <h3>Practices</h3>
+              <ul className={styles.skillList}>
+                {["Accessibility (a11y)", "Performance", "Testing", "Agile", "Mentorship"].map((skill) => (
+                  <li key={skill} className={styles.skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Section>
       </div>
     </KapaBackground>
   );
 }
-
-function ExperienceItem({
-  company,
-  role,
-  period,
-  description,
-}: {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-}) {
-  return (
-    <div className="border-l-2 border-sand/20 pl-6">
-      <p className="text-gold text-sm mb-1">{period}</p>
-      <h3 className="font-serif text-xl text-sand mb-1">{role}</h3>
-      <p className="text-sand/60 text-sm mb-2">{company}</p>
-      <p className="text-sand/70 leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-function SkillCategory({
-  title,
-  skills,
-}: {
-  title: string;
-  skills: string[];
-}) {
-  return (
-    <div>
-      <h3 className="font-serif text-lg text-gold mb-3">{title}</h3>
-      <ul className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <li
-            key={skill}
-            className="text-sm px-3 py-1 bg-sand/5 text-sand/70 border border-sand/10"
-          >
-            {skill}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-

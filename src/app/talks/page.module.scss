@@ -1,0 +1,118 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.intro {
+  color: $sand-70;
+  max-width: 42rem;
+  margin-bottom: $spacing-12;
+  line-height: $leading-relaxed;
+}
+
+.talksList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.talkItem {
+  border: 1px solid $sand-10;
+  padding: $spacing-8;
+  transition: border-color $transition-base;
+  
+  &:hover {
+    border-color: $gold-30;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-1 $spacing-4;
+  font-size: $text-sm;
+  color: $sand-50;
+  margin-bottom: $spacing-2;
+}
+
+.event {
+  color: $gold;
+  font-size: $text-sm;
+  margin-bottom: $spacing-1;
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: $text-2xl;
+  color: $sand;
+  margin-bottom: $spacing-4;
+}
+
+.description {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4;
+}
+
+.link {
+  color: $gold;
+  font-size: $text-sm;
+  transition: color $transition-base;
+  @include link-underline;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+
+.speakingBox {
+  color: $sand-70;
+  margin-bottom: $spacing-8;
+  
+  a {
+    color: $gold;
+    margin-left: $spacing-1;
+    @include link-underline;
+    
+    &:hover {
+      color: $sand;
+    }
+  }
+}
+
+.topicsBox {
+  border: 1px solid $sand-10;
+  padding: $spacing-6;
+  background: $sand-05;
+  
+  h3 {
+    font-family: $font-serif;
+    font-size: $text-lg;
+    color: $sand;
+    margin-bottom: $spacing-2;
+  }
+  
+  ul {
+    color: $sand-70;
+    font-size: $text-sm;
+    
+    li {
+      margin-bottom: $spacing-2;
+    }
+  }
+}
+

@@ -1,4 +1,5 @@
 import { Section, KapaBackground } from "@/components";
+import styles from "./page.module.scss";
 
 export const metadata = {
   title: "Talks | Kat Perreira",
@@ -7,59 +8,42 @@ export const metadata = {
 
 export default function TalksPage() {
   return (
-    <KapaBackground className="min-h-screen">
-      <div className="px-6 lg:px-12 py-12 lg:py-24">
+    <KapaBackground>
+      <div className={styles.container}>
         <Section title="Talks">
-          <p className="text-sand/70 max-w-2xl mb-12 leading-relaxed">
-            I speak at conferences and meetups about engineering culture, 
-            search systems, accessibility, and building humane software. 
-            Here are some of my recent talks.
+          <p className={styles.intro}>
+            I speak at conferences and events about engineering culture, 
+            diversity in tech, and building inclusive teams.
           </p>
           
-          <div className="space-y-8">
+          <div className={styles.talksList}>
             <TalkItem
-              title="Talk Title Here"
-              event="Conference Name 2024"
-              location="San Francisco, CA"
-              date="November 2024"
-              description="A description of what this talk covered. What were the key takeaways? Who was the audience?"
-              videoUrl="https://youtube.com/watch?v=example"
-              slidesUrl="https://speakerdeck.com/example"
-            />
-            
-            <TalkItem
-              title="Another Great Talk"
-              event="Tech Meetup 2024"
+              title="Crossing International Waters: Thoughts from Startup Journeys to Global Scale"
+              event="WiT Regatta 2020"
               location="Virtual"
-              date="October 2024"
-              description="A description of what this talk covered. What were the key takeaways? Who was the audience?"
-              slidesUrl="https://speakerdeck.com/example"
-            />
-            
-            <TalkItem
-              title="Earlier Talk"
-              event="Developer Conference 2023"
-              location="Seattle, WA"
-              date="June 2023"
-              description="A description of what this talk covered. What were the key takeaways? Who was the audience?"
-              videoUrl="https://youtube.com/watch?v=example"
+              date="August 2020"
+              description="A panel discussion exploring the journey from startup to global scale, sharing insights on navigating growth, building diverse teams, and the unique challenges of scaling technology companies. Supported by Highspot."
+              eventUrl="https://seattlewitregatta2020.sched.com/event/cs2i/crossing-international-waters-thoughts-from-startup-journeys-to-global-scale-supported-by-highspot"
             />
           </div>
         </Section>
 
-        <Section title="Upcoming" className="mt-16">
-          <p className="text-sand/70 mb-8">
-            Interested in having me speak at your event? 
-            <a href="/contact" className="text-gold hover:text-sand transition-colors ml-1 link-underline">
-              Get in touch
-            </a>
-            .
+        <Section title="Speaking">
+          <p className={styles.speakingBox}>
+            Interested in having me speak at your event? I speak about 
+            mentorship, diversity in tech, building inclusive products, 
+            and engineering culture.
+            <a href="/contact">Get in touch</a>.
           </p>
           
-          <div className="border border-sand/10 p-6">
-            <p className="text-sand/50 text-sm mb-1">January 2025</p>
-            <h3 className="font-serif text-xl text-sand mb-2">Upcoming Talk Title</h3>
-            <p className="text-gold text-sm">Conference Name • Location</p>
+          <div className={styles.topicsBox}>
+            <h3>Topics I speak about:</h3>
+            <ul>
+              <li>• Building a more inclusive future in tech</li>
+              <li>• The power of mentorship in career growth</li>
+              <li>• Making products that work for everyone</li>
+              <li>• Transitioning into tech from non-traditional backgrounds</li>
+            </ul>
           </div>
         </Section>
       </div>
@@ -75,6 +59,7 @@ function TalkItem({
   description,
   videoUrl,
   slidesUrl,
+  eventUrl,
 }: {
   title: string;
   event: string;
@@ -83,36 +68,32 @@ function TalkItem({
   description: string;
   videoUrl?: string;
   slidesUrl?: string;
+  eventUrl?: string;
 }) {
   return (
-    <div className="border border-sand/10 p-8 hover:border-gold/30 transition-colors">
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-sand/50 mb-2">
+    <div className={styles.talkItem}>
+      <div className={styles.meta}>
         <span>{date}</span>
         <span>•</span>
         <span>{location}</span>
       </div>
-      <p className="text-gold text-sm mb-1">{event}</p>
-      <h3 className="font-serif text-2xl text-sand mb-4">{title}</h3>
-      <p className="text-sand/70 leading-relaxed mb-6">{description}</p>
+      <p className={styles.event}>{event}</p>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
       
-      <div className="flex gap-4">
+      <div className={styles.links}>
+        {eventUrl && (
+          <a href={eventUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+            View Event →
+          </a>
+        )}
         {videoUrl && (
-          <a
-            href={videoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gold hover:text-sand transition-colors text-sm link-underline"
-          >
+          <a href={videoUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
             Watch Video →
           </a>
         )}
         {slidesUrl && (
-          <a
-            href={slidesUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gold hover:text-sand transition-colors text-sm link-underline"
-          >
+          <a href={slidesUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
             View Slides →
           </a>
         )}
@@ -120,4 +101,3 @@ function TalkItem({
     </div>
   );
 }
-

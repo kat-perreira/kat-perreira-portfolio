@@ -1,0 +1,139 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.sidebar {
+  overflow: hidden;
+  
+  @include lg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 480px;
+    flex-shrink: 0;
+  }
+}
+
+.inner {
+  position: relative;
+  height: 100%;
+  padding: $spacing-12 $spacing-6;
+  display: flex;
+  flex-direction: column;
+  
+  @include lg {
+    padding: $spacing-24 $spacing-12;
+  }
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  z-index: $z-base;
+}
+
+.name {
+  font-family: $font-serif;
+  font-size: $text-4xl;
+  color: $sand;
+  line-height: $leading-tight;
+  margin-bottom: $spacing-4;
+  
+  @include md {
+    font-size: $text-5xl;
+  }
+  
+  @include lg {
+    font-size: 3.25rem;
+  }
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: $text-xl;
+  color: $gold;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+  
+  @include md {
+    font-size: $text-2xl;
+  }
+}
+
+.nav {
+  display: none;
+  margin-bottom: $spacing-12;
+  
+  @include lg {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.navLink {
+  color: $sand-60;
+  transition: color $transition-base;
+  display: inline-block;
+  @include link-underline;
+  
+  &:hover {
+    color: $gold;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: $spacing-5;
+  position: relative;
+  z-index: $z-base;
+}
+
+.socialLink {
+  color: $sand-50;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $gold;
+  }
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Mobile Nav
+.mobileNav {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background: rgba($forest, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: $border-width solid $sand-10;
+  padding: $spacing-4 $spacing-6;
+  
+  @include lg {
+    display: none;
+  }
+}
+
+.mobileNavInner {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-6;
+}
+
+.mobileNavLink {
+  color: $sand-70;
+  font-size: $text-sm;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $gold;
+  }
+}
+

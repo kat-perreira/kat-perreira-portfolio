@@ -1,0 +1,214 @@
+@use 'variables' as *;
+
+// ============================================
+// Responsive Breakpoints
+// ============================================
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// ============================================
+// Typography
+// ============================================
+@mixin heading-1 {
+  font-family: $font-serif;
+  font-size: $text-3xl;
+  line-height: $leading-tight;
+  
+  @include md {
+    font-size: $text-4xl;
+  }
+  
+  @include lg {
+    font-size: $text-5xl;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $font-serif;
+  font-size: $text-2xl;
+  line-height: $leading-tight;
+  
+  @include md {
+    font-size: $text-3xl;
+  }
+}
+
+@mixin heading-3 {
+  font-family: $font-serif;
+  font-size: $text-xl;
+  line-height: $leading-snug;
+  
+  @include md {
+    font-size: $text-2xl;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-sans;
+  font-size: $text-base;
+  line-height: $leading-relaxed;
+}
+
+@mixin small-text {
+  font-size: $text-sm;
+  line-height: $leading-normal;
+}
+
+// ============================================
+// Layout
+// ============================================
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $breakpoint-xl;
+  margin: 0 auto;
+  padding-left: $spacing-6;
+  padding-right: $spacing-6;
+  
+  @include lg {
+    padding-left: $spacing-12;
+    padding-right: $spacing-12;
+  }
+}
+
+// ============================================
+// Interactive Elements
+// ============================================
+@mixin link-underline {
+  position: relative;
+  transition: color $transition-base;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $gold;
+    transition: width $transition-slow;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@mixin button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-6;
+  border: $border-width solid $sand;
+  color: $sand;
+  font-size: $text-sm;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all $transition-slow;
+  
+  &:hover {
+    background: $sand;
+    color: $forest;
+  }
+  
+  &:focus {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
+@mixin button-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-6;
+  border: $border-width solid $gold;
+  color: $gold;
+  font-size: $text-sm;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all $transition-slow;
+  
+  &:hover {
+    background: $gold;
+    color: $forest;
+  }
+  
+  &:focus {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
+  }
+}
+
+// ============================================
+// Cards
+// ============================================
+@mixin card {
+  padding: $spacing-6;
+  border: $border-width solid $sand-10;
+  transition: border-color $transition-base;
+  
+  &:hover {
+    border-color: $gold-30;
+  }
+  
+  @include md {
+    padding: $spacing-8;
+  }
+}
+
+// ============================================
+// Utilities
+// ============================================
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

@@ -1,0 +1,148 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.h1 {
+  font-family: $font-serif;
+  font-size: $text-3xl;
+  color: $sand;
+  margin-top: $spacing-12;
+  margin-bottom: $spacing-6;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+  
+  @include md {
+    font-size: $text-4xl;
+  }
+}
+
+.h2 {
+  font-family: $font-serif;
+  font-size: $text-2xl;
+  color: $sand;
+  margin-top: $spacing-10;
+  margin-bottom: $spacing-4;
+  
+  @include md {
+    font-size: $text-3xl;
+  }
+}
+
+.h3 {
+  font-family: $font-serif;
+  font-size: $text-xl;
+  color: $sand;
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-3;
+  
+  @include md {
+    font-size: $text-2xl;
+  }
+}
+
+.p {
+  color: $sand-80;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.a {
+  color: $gold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+
+.ul {
+  list-style: disc;
+  list-style-position: inside;
+  color: $sand-80;
+  margin-bottom: $spacing-6;
+  margin-left: $spacing-4;
+  
+  li {
+    margin-bottom: $spacing-2;
+    line-height: $leading-relaxed;
+  }
+}
+
+.ol {
+  list-style: decimal;
+  list-style-position: inside;
+  color: $sand-80;
+  margin-bottom: $spacing-6;
+  margin-left: $spacing-4;
+  
+  li {
+    margin-bottom: $spacing-2;
+    line-height: $leading-relaxed;
+  }
+}
+
+.blockquote {
+  border-left: 4px solid $gold;
+  padding-left: $spacing-6;
+  margin: $spacing-8 0;
+  font-style: italic;
+  color: $sand-70;
+}
+
+.code {
+  background: $forest-soft;
+  padding: $spacing-1 $spacing-2;
+  border-radius: $radius-sm;
+  color: $gold;
+  font-size: $text-sm;
+  font-family: $font-mono;
+}
+
+.pre {
+  background: $forest-soft;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  overflow-x: auto;
+  margin-bottom: $spacing-6;
+  font-size: $text-sm;
+  
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.hr {
+  border: none;
+  border-top: 1px solid $sand-20;
+  margin: $spacing-12 0;
+}
+
+.strong {
+  color: $sand;
+  font-weight: 600;
+}
+
+.em {
+  font-style: italic;
+  color: $sand-90;
+}
+
+.callout {
+  background: $gold-10;
+  border: 1px solid $gold-30;
+  border-radius: $radius-lg;
+  padding: $spacing-6;
+  margin: $spacing-8 0;
+  
+  p {
+    color: $sand-90;
+    line-height: $leading-relaxed;
+    margin: 0;
+  }
+}
+

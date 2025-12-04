@@ -1,0 +1,93 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.intro {
+  color: $sand-70;
+  max-width: 42rem;
+  margin-bottom: $spacing-12;
+  line-height: $leading-relaxed;
+}
+
+.articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.article {
+  display: block;
+  border: 1px solid $sand-10;
+  padding: $spacing-8;
+  transition: border-color $transition-base;
+  
+  &:hover {
+    border-color: $gold-30;
+    
+    .articleTitle {
+      color: $gold;
+    }
+  }
+}
+
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-1 $spacing-3;
+  font-size: $text-sm;
+  color: $sand-50;
+  margin-bottom: $spacing-2;
+}
+
+.publication {
+  color: $gold;
+}
+
+.articleTitle {
+  font-family: $font-serif;
+  font-size: $text-xl;
+  color: $sand;
+  transition: color $transition-base;
+  margin-bottom: $spacing-4;
+  
+  @include md {
+    font-size: $text-2xl;
+  }
+}
+
+.articleDescription {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-4;
+}
+
+.readMore {
+  color: $gold;
+  font-size: $text-sm;
+}
+
+.blogIntro {
+  color: $sand-70;
+  max-width: 42rem;
+  margin-bottom: $spacing-8;
+  line-height: $leading-relaxed;
+}
+
+.blogButton {
+  @include button-gold;
+}
+
+.divider {
+  margin: $spacing-16 0;
+}
+

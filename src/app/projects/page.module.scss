@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.intro {
+  color: $sand-70;
+  max-width: 42rem;
+  margin-bottom: $spacing-12;
+  line-height: $leading-relaxed;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-12;
+}
+
+.featuredProject {
+  border: 1px solid $sand-10;
+  padding: $spacing-8;
+  transition: border-color $transition-base;
+  
+  &:hover {
+    border-color: $gold-30;
+  }
+}
+
+.projectTitle {
+  font-family: $font-serif;
+  font-size: $text-2xl;
+  color: $sand;
+  margin-bottom: $spacing-4;
+}
+
+.projectDescription {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  margin-bottom: $spacing-6;
+}
+
+.tag {
+  font-size: $text-xs;
+  padding: $spacing-1 $spacing-2;
+  background: $sand-05;
+  color: $sand-50;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-4;
+}
+
+.link {
+  color: $gold;
+  font-size: $text-sm;
+  transition: color $transition-base;
+  @include link-underline;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+
+.smallProjectsGrid {
+  display: grid;
+  gap: $spacing-6;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.smallProject {
+  border: 1px solid $sand-10;
+  padding: $spacing-6;
+  transition: border-color $transition-base;
+  
+  &:hover {
+    border-color: $gold-30;
+  }
+  
+  h3 {
+    font-family: $font-serif;
+    font-size: $text-lg;
+    color: $sand;
+    margin-bottom: $spacing-2;
+  }
+  
+  p {
+    color: $sand-60;
+    font-size: $text-sm;
+    line-height: $leading-relaxed;
+    margin-bottom: $spacing-4;
+  }
+}
+

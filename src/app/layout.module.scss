@@ -1,0 +1,19 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.body {
+  min-height: 100vh;
+}
+
+.wrapper {
+  @include lg {
+    display: flex;
+    min-height: 100vh;
+  }
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+

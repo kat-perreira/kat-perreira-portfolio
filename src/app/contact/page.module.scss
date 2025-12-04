@@ -1,0 +1,98 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.content {
+  max-width: 42rem;
+}
+
+.intro {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-8;
+}
+
+.button {
+  @include button-outline;
+  margin-bottom: $spacing-12;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+  
+  @include sm {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-4;
+  }
+}
+
+.contactLabel {
+  color: $sand-50;
+  font-size: $text-sm;
+  width: 6rem;
+}
+
+.contactLink {
+  color: $gold;
+  transition: color $transition-base;
+  @include link-underline;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+
+.speakingIntro {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+  margin-bottom: $spacing-6;
+}
+
+.speakingList {
+  color: $sand-70;
+  margin-bottom: $spacing-8;
+  
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-3;
+    margin-bottom: $spacing-2;
+  }
+}
+
+.speakingIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  color: $gold;
+}
+
+.speakingLink {
+  color: $gold;
+  transition: color $transition-base;
+  @include link-underline;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+

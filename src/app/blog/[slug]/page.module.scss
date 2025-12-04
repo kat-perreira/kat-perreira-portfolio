@@ -1,0 +1,114 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.backLink {
+  color: $sand-50;
+  font-size: $text-sm;
+  transition: color $transition-base;
+  display: inline-block;
+  margin-bottom: $spacing-8;
+  
+  &:hover {
+    color: $gold;
+  }
+}
+
+.header {
+  margin-bottom: $spacing-12;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-1 $spacing-4;
+  font-size: $text-sm;
+  color: $sand-50;
+  margin-bottom: $spacing-4;
+}
+
+.title {
+  font-family: $font-serif;
+  font-size: $text-3xl;
+  color: $sand;
+  line-height: $leading-tight;
+  margin-bottom: $spacing-4;
+  
+  @include md {
+    font-size: $text-4xl;
+  }
+  
+  @include lg {
+    font-size: $text-5xl;
+  }
+}
+
+.description {
+  color: $sand-70;
+  font-size: $text-lg;
+  line-height: $leading-relaxed;
+  max-width: 42rem;
+}
+
+.mediumLink {
+  display: inline-block;
+  margin-top: $spacing-4;
+  color: $gold;
+  font-size: $text-sm;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: $sand-10;
+  margin-bottom: $spacing-12;
+}
+
+.content {
+  max-width: 42rem;
+}
+
+.footer {
+  margin-top: $spacing-16;
+  padding-top: $spacing-8;
+  border-top: 1px solid $sand-10;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  margin-bottom: $spacing-8;
+}
+
+.tag {
+  font-size: $text-xs;
+  padding: $spacing-1 $spacing-3;
+  background: $sand-05;
+  color: $sand-50;
+  border: 1px solid $sand-10;
+}
+
+.footerLink {
+  color: $gold;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $sand;
+  }
+}
+

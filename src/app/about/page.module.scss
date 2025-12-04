@@ -1,0 +1,90 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  padding: $spacing-6;
+  
+  @include lg {
+    padding: $spacing-12;
+    padding-top: $spacing-24;
+    padding-bottom: $spacing-24;
+  }
+}
+
+.intro {
+  max-width: 42rem;
+  
+  p {
+    color: $sand-80;
+    line-height: $leading-relaxed;
+    margin-bottom: $spacing-6;
+  }
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.experienceItem {
+  border-left: 2px solid $sand-20;
+  padding-left: $spacing-6;
+}
+
+.period {
+  color: $gold;
+  font-size: $text-sm;
+  margin-bottom: $spacing-1;
+}
+
+.role {
+  font-family: $font-serif;
+  font-size: $text-xl;
+  color: $sand;
+  margin-bottom: $spacing-1;
+}
+
+.company {
+  color: $sand-60;
+  font-size: $text-sm;
+  margin-bottom: $spacing-2;
+}
+
+.description {
+  color: $sand-70;
+  line-height: $leading-relaxed;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: $spacing-8;
+  
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skillCategory {
+  h3 {
+    font-family: $font-serif;
+    font-size: $text-lg;
+    color: $gold;
+    margin-bottom: $spacing-3;
+  }
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+}
+
+.skill {
+  font-size: $text-sm;
+  padding: $spacing-1 $spacing-3;
+  background: $sand-05;
+  color: $sand-70;
+  border: 1px solid $sand-10;
+}
+
