@@ -32,11 +32,16 @@ export function Hero({ className = "" }: HeroProps) {
       </p>
 
       <div className={styles.buttons}>
+        <a 
+          href="/resume.pdf" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.buttonPrimary}
+        >
+          View Resume
+        </a>
         <a href="/projects" className={styles.buttonPrimary}>
           View Projects
-        </a>
-        <a href="/talks" className={styles.buttonSecondary}>
-          Watch a Talk
         </a>
       </div>
 

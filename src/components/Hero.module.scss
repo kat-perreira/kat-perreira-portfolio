@@ -54,18 +54,51 @@
 }
 
 .buttonPrimary {
-  @include button-outline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-6;
+  background-color: $gold;
+  border: $border-width solid $gold;
+  color: #0a0a0a; // Near-black for maximum contrast on gold
+  font-size: $text-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-slow;
+  
+  &:hover {
+    background-color: $sand;
+    border-color: $sand;
+    color: #0a0a0a;
+  }
+  
+  &:focus {
+    outline: 2px solid $sand;
+    outline-offset: 2px;
+  }
 }
 
 .buttonSecondary {
-  @include button-outline;
-  border-color: $sand-30;
-  color: $sand-80;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-6;
+  background: $forest-soft;
+  border: $border-width solid $sand-30;
+  color: $sand;
+  font-size: $text-sm;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $transition-slow;
   
   &:hover {
+    background: $sand-10;
     border-color: $sand;
-    color: $sand;
-    background: transparent;
+  }
+  
+  &:focus {
+    outline: 2px solid $gold;
+    outline-offset: 2px;
   }
 }
 

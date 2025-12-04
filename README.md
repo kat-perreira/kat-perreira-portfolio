@@ -122,15 +122,46 @@ If you publish on Medium first, you can cross-post to your blog:
 3. Add `mediumUrl` in frontmatter to link back to Medium
 4. Your blog will show "Also on Medium" badge
 
-## Brand Colors
+## Style Guide
 
-| Name         | Hex       | Usage              |
-|--------------|-----------|-------------------|
-| `forest`     | `#062b24` | Main background   |
-| `forestSoft` | `#0b3b32` | Subtle variation  |
-| `sand`       | `#f4f4f1` | Primary text      |
-| `gold`       | `#d3b379` | Accent/links      |
-| `clay`       | `#c88f85` | Subtle accent     |
+For the complete design system documentation, see **[`src/styles/STYLE_GUIDE.md`](src/styles/STYLE_GUIDE.md)**.
+
+### Brand Colors
+
+| Name | Variable | Hex | Usage |
+|------|----------|-----|-------|
+| **Forest** | `$forest` | `#062b24` | Primary background |
+| **Forest Soft** | `$forest-soft` | `#0b3b32` | Secondary background |
+| **Sand** | `$sand` | `#f4f4f1` | Primary text |
+| **Gold** | `$gold` | `#d3b379` | Accent, links, highlights |
+| **Clay** | `$clay` | `#c88f85` | Secondary accent |
+
+### Typography
+
+| Font | Variable | Usage |
+|------|----------|-------|
+| Cormorant Garamond | `$font-serif` | Headings |
+| Source Sans 3 | `$font-sans` | Body text |
+| JetBrains Mono | `$font-mono` | Code |
+
+### Spacing Scale
+
+Based on 4px grid: `$spacing-1` (4px) through `$spacing-32` (128px)
+
+### Breakpoints
+
+| Mixin | Min Width |
+|-------|-----------|
+| `@include sm` | 640px |
+| `@include md` | 768px |
+| `@include lg` | 1024px |
+| `@include xl` | 1280px |
+
+### Accessibility
+
+- All color combinations meet **WCAG AA** contrast requirements
+- Focus states on all interactive elements
+- Keyboard navigation support
 
 ## Tech Stack
 
