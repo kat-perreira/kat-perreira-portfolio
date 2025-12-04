@@ -3,15 +3,11 @@
  * 
  * Sticky left sidebar containing:
  * - Name & title
- * - Brief intro
  * - Navigation links
  * - Social links
- * - Decorative ʻIwa birds
  * 
  * On mobile: Converts to a top section (not sticky)
  */
-
-import { IwaBirdsHero } from './IwaBirds';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -56,10 +52,6 @@ export function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-0 lg:h-screen lg:w-[480px] lg:flex-shrink-0 overflow-hidden">
       <div className="relative h-full px-6 py-12 lg:py-24 lg:px-12 flex flex-col">
-        
-        {/* ʻIwa Birds - positioned in upper right of sidebar */}
-        <IwaBirdsHero className="hidden lg:block absolute top-12 right-0 w-72 h-64" />
-        
         {/* Main content */}
         <div className="flex-1 relative z-10">
           {/* Name */}

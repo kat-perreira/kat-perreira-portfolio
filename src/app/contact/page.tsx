@@ -1,4 +1,4 @@
-import { Section, KapaBackground, IwaBird } from "@/components";
+import { Section, KapaBackground } from "@/components";
 
 export const metadata = {
   title: "Contact | Kat Perreira",
@@ -6,15 +6,14 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const contactMessage = "I'm always happy to connect! Whether you want to discuss a project, invite me to speak at your event, or just say hello — my inbox is open.";
   return (
     <KapaBackground className="min-h-screen">
       <div className="px-6 lg:px-12 py-12 lg:py-24">
         <Section title="Get in Touch">
           <div className="max-w-2xl">
             <p className="text-sand/70 leading-relaxed mb-8">
-              I&apos;m always happy to connect! Whether you want to discuss a 
-              project, invite me to speak at your event, or just say hello — 
-              my inbox is open.
+           {contactMessage}
             </p>
             
             <a
@@ -27,8 +26,8 @@ export default function ContactPage() {
             <div className="space-y-6">
               <ContactMethod
                 label="Email"
-                value="hello@katperreira.com"
-                href="mailto:hello@katperreira.com"
+                value="kat.perreira@gmail.com" // todo: replace with new email once set up
+                href="mailto:kat.perreira@gmail.com" 
               />
               <ContactMethod
                 label="LinkedIn"
@@ -39,11 +38,6 @@ export default function ContactPage() {
                 label="GitHub"
                 value="github.com/katperreira"
                 href="https://github.com/katperreira"
-              />
-              <ContactMethod
-                label="Twitter/X"
-                value="@katperreira"
-                href="https://twitter.com/katperreira"
               />
             </div>
           </div>
@@ -56,24 +50,6 @@ export default function ContactPage() {
               accessibility, search systems, and building humane software. 
               If you&apos;d like me to speak at your event, please include:
             </p>
-            <ul className="text-sand/70 space-y-2 mb-8">
-              <li className="flex items-start gap-3">
-                <IwaBird className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Event name, date, and location</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <IwaBird className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Expected audience size and demographic</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <IwaBird className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Topic preferences or suggestions</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <IwaBird className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>Whether travel/accommodation is provided</span>
-              </li>
-            </ul>
             <a
               href="mailto:speaking@katperreira.com"
               className="text-gold hover:text-sand transition-colors link-underline"
