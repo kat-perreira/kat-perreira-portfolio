@@ -65,46 +65,6 @@ src/
 | `gold`       | `#d3b379` | Accent/links      |
 | `clay`       | `#c88f85` | Subtle accent     |
 
-## Push to GitHub (First Time)
-
-1. **Create a new repository on GitHub**
-   - Go to [github.com/new](https://github.com/new)
-   - Name it `kat-perreira-portfolio` (or your preferred name)
-   - Leave it empty — don't add README, .gitignore, or license
-
-2. **Initialize and push from your terminal**
-
-```bash
-# Navigate to your project
-cd /Users/crow/src/kat-perreira-portfolio
-
-# Initialize git (if not already)
-git init
-
-# Add all files
-git add .
-
-# Commit
-git commit -m "Initial commit: portfolio scaffold"
-
-# Add your GitHub repo as remote (replace with your username)
-git remote add origin https://github.com/YOUR_USERNAME/kat-perreira-portfolio.git
-
-# Push to main branch
-git push -u origin main
-```
-
-> **Note:** If your default branch is `master`, use `git push -u origin master` instead.
-
-## Deployment
-
-Deploy to Vercel:
-
-```bash
-npx vercel
-```
-
-Or connect your GitHub repo to [Vercel](https://vercel.com) for automatic deployments.
 
 ## Tech Stack
 
