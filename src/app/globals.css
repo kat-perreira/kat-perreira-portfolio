@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ========================================
+   Brand Colors (from spec)
+   ========================================
+   forest:     #062b24  (main background)
+   forestSoft: #0b3b32  (subtle variation)
+   sand:       #f4f4f1  (primary text)
+   gold:       #d3b379  (accent/links)
+   clay:       #c88f85  (subtle accent)
+   ======================================== */
+
+:root {
+  --forest: #062b24;
+  --forest-soft: #0b3b32;
+  --sand: #f4f4f1;
+  --gold: #d3b379;
+  --clay: #c88f85;
+}
+
+@theme inline {
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-clay: var(--clay);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--forest);
+  color: var(--sand);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--forest);
+}
+
+/* ========================================
+   Kapa Background Pattern
+   ======================================== */
+.kapa-bg {
+  position: relative;
+}
+
+.kapa-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4f4f1' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================================
+   Link Styles
+   ======================================== */
+.link-underline {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  border: 1px solid var(--sand);
+  color: var(--sand);
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--sand);
+  color: var(--forest);
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--forest);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--forest-soft);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+
